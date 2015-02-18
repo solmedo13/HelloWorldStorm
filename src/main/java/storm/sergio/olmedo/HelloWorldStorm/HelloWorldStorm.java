@@ -14,7 +14,7 @@ public class HelloWorldStorm {
 		Config config = new Config();
 		config.put("inputFile", "E:\\GitHub\\HelloWorldStorm\\src\\resources\\HelloWorld" );
 		config.setDebug(true);
-		config.put(Config.TOPOLOGY_MAX_SPOUT_PENDING, 1);
+		
 		
 		TopologyBuilder builder = new TopologyBuilder();
 		builder.setSpout("readDataSpout",new DataStreamingConsumerSpout());
@@ -25,7 +25,7 @@ public class HelloWorldStorm {
 		LocalCluster cluster = new LocalCluster();
 		cluster.submitTopology("HelloStorm", config, builder.createTopology());
 		
-		Thread.sleep(10000);
+		//Thread.sleep(10000);
 		
 		
 		//cluster.shutdown();
